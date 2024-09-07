@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Record</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        input[type="number"], input[type="text"], input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #fd6565;
+            color: white;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e14e4e;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="roll" placeholder="Enter Roll No"><br>
+        <input type="text" name="name" placeholder="Enter Name"><br>
+        <input type="number" name="mark" placeholder="Enter Mark"><br>
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>
